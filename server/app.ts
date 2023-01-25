@@ -14,7 +14,7 @@ app.get('/:videoPath', async (req: Request, res: Response) => {
     if (!rangeHeader) throw new Error('Requires Range header')
 
     // get file stat with fs module to access size
-    const videoPath = `./${req.params.videoPath}`
+    const videoPath = `./videos/${req.params.videoPath}`
     const fileData = await fsPromises.stat(videoPath)
     const videoSize = fileData.size
 
