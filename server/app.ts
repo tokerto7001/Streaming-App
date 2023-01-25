@@ -27,6 +27,7 @@ app.get('/:videoPath', async (req: Request, res: Response) => {
     // decide the end byte considering chunk size
     const end = splittedRange[1] ? parseInt(splittedRange[1], 10) : videoSize - 1
 
+
     // calculate content length
     const contentLength = end - start + 1
 
@@ -40,7 +41,7 @@ app.get('/:videoPath', async (req: Request, res: Response) => {
     // const remaining = videoSize - start
 
     // mark the current contet as completed if this is the latest chunk
-    // if (remaining < this.chunkSize) {
+    // if (remaining < chunkSize) {
     //     userCourseService.updateUserProgress(userId, courseId, contentId)
     // }
 
